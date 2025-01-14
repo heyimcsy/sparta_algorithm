@@ -1,8 +1,8 @@
-a = 3
-b = 2
-c = a + b
-d = a / b
-e = a * b
-f = a - b
+fruits = ['사과','배','배','감','수박','귤','딸기','사과','배','수박']
 
-print( c, d, e, f)
+count = 0
+for f in fruits:
+    if f == '사과':
+        count += 1
+
+print(count)
