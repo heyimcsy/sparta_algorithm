@@ -4,12 +4,12 @@ def get_age(name):
           {'name': 'john', 'age': 7},
           {'name': 'smith', 'age': 17},
           {'name': 'ben', 'age': 27}]
-    reply = '그런 이름이 없습니다.'
+
     for p in people:
         if p['name'] == name:
-            reply = str(p['age'])
+            return str(p['age'])
 
-    return reply
+    return '그런 이름이 없습니다.'
 
 
 print(get_age('bob'))
