@@ -1,17 +1,10 @@
-def get_age(name):
-    people = [{'name': 'bob', 'age': 20},
-          {'name': 'carry', 'age': 38},
-          {'name': 'john', 'age': 7},
-          {'name': 'smith', 'age': 17},
-          {'name': 'ben', 'age': 27}]
+class Person:
+    def __init__(self, name):
+        self.name = name
 
-    for p in people:
-        if p['name'] == name:
-            return str(p['age'])
-
-    return '그런 이름이 없습니다.'
+    def sayhello(self, to):
+        print(f"hello, {to}. I am {self.name}")
 
 
-print(get_age('bob'))
-print(get_age('john'))
-print(get_age('bk'))
+rtan = Person("르탄")
+rtan.sayhello("병관")
