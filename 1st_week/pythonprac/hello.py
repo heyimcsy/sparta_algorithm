@@ -1,10 +1,11 @@
-class Person:
-    def __init__(self, name):
-        self.name = name
+from pprint import pprint
 
-    def sayhello(self, to):
-        print(f"hello, {to}. I am {self.name}")
+import requests # requests 라이브러리 설치 필요
 
+r = requests.get('http://spartacodingclub.shop/sparta_api/seoulair')
+rjson = r.json()
+rows = rjson['RealtimeCityAir']['row']
+# pprint(rows)
 
-rtan = Person("르탄")
-rtan.sayhello("병관")
+for row in rows:
+    print(row['MSRSTE_NM'], row['IDEX_MVL'])
