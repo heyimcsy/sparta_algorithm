@@ -21,11 +21,3 @@ class LinkedList:
             node = node.next
 
         node.next = ListNode(val, None)
-
-ln = LinkedList()
-
-ln.append(3)
-ln.append(5)
-ln.append(7)
-
-print(ln)
