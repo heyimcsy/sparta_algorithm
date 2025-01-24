@@ -1,5 +1,5 @@
 from structures import LinkedList, Stack
-from prac import isPalindrome
+from prac import isPalindrome,test_problem_stack
 
 l1 = LinkedList()
 for num in [1, 2, 2, 1]:
@@ -30,3 +30,13 @@ def test_stack():
     assert stack.pop() == 1
     assert stack.pop() is None
     assert stack.is_empty()
+
+
+assert test_problem_stack("()")
+assert test_problem_stack("()[]{}")
+assert test_problem_stack("({[][]})")
+assert test_problem_stack("({[]})")
+assert not test_problem_stack("(]")
+assert not test_problem_stack("(()]")
+assert not test_problem_stack("(((])")
+assert not test_problem_stack("((())")
