@@ -1,3 +1,5 @@
+from collections import deque
+
 def isPalindrome(ln):
     arr = []
     head = ln.head
@@ -38,3 +40,11 @@ def test_problem_stack(s):
                 return False
     return len(stack) == 0
 
+def test_problem_queue(n):
+    deq = deque([i for i in range(1, n + 1)])
+
+    while len(deq) > 1:
+        deq.popleft()
+        front = deq.popleft()
+        deq.append(front)
+    return deq.pop()
