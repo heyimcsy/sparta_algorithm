@@ -1,3 +1,6 @@
+from collections import deque
+#DFS
+
 def dfs_recursive(graph, node, visited):
     # 방문처리
     visited.append(node)
@@ -107,3 +110,19 @@ assert island_dfs_recursive(grid=[
     ["0", "0", "1", "0", "0"],
     ["0", "0", "0", "1", "1"]
 ]) == 3
+
+# BFS
+
+
+def bfs_queue(graph, start):
+    visited = [start]
+    q = deque([start])
+
+    while q:
+        node = q.popleft()
+        for adj in graph[node]:
+            if adj not in visited:
+                q.append(adj)
+                visited.append(adj)
+
+    return visited
