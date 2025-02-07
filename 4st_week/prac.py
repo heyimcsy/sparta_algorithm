@@ -1,3 +1,5 @@
+from structures import BinaryMinHeap
+
 def bubblesort(lst):
     # 최댓값을 구하는 알고리즘을 len(lst) - 1 만큼 반복한다.
     iters = len(lst) - 1
@@ -87,3 +89,10 @@ def mergesort(lst):
     L = lst[:mid]
     R = lst[mid:]
     return merge(mergesort(L), mergesort(R))
+
+def heapsort(lst):
+    minheap = BinaryMinHeap()
+    for elem in lst:
+        minheap.insert(elem)
+
+    return [minheap.extract() for _ in range(len(lst))]
