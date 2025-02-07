@@ -34,3 +34,26 @@ def insertionsort(lst):
             else:
                 break
     return lst
+
+# i는 피벗보다 작은 값이 모여있는 경계 ,j는 i가 정해져 있으면 피벗의 값과 비교하기 위해 이동하는 애
+# pivot은 처음에는 -1로 정해진다. 아직 뭐가 더 작은지 알 수 없으니까
+
+def quicksort(lst, start, end):
+    def partition(part, ps, pe):
+        pivot = part[pe]
+        i = ps - 1
+        for j in range(ps, pe):
+            if part[j] <= pivot:
+                i += 1
+                part[i], part[j] = part[j], part[i]
+
+        part[i + 1], part[pe] = part[pe], part[i + 1]
+        return i + 1
+
+    if start >= end:
+        return None
+
+    p = partition(lst, start, end)
+    quicksort(lst, start, p - 1)
+    quicksort(lst, p + 1, end)
+    return lst
